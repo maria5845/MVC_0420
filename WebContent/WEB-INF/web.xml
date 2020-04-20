@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>JSPMVC_0420</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- 서블릿 등록 -->
+	<servlet>
+		<servlet-name>ControllerUsingURI</servlet-name>
+		<servlet-class>com.ja.freeboard.controller.ControllerUsingURI</servlet-class>
+		<!-- 맨처음 가동할 때 순서를 지정함 (로드 온 스타터) 일반적인 형태 -->
+		<load-on-startup>1</load-on-startup>
+
+	</servlet>
+
+	<!-- 서블릿 매핑 -->
+	<servlet-mapping>
+		<servlet-name>ControllerUsingURI</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+
+	<!--필터등록 -->
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>com.ja.freeboard.filter.CharacterEncodingFilter</filter-class>
+	</filter>
+
+	<!-- 필터매핑 -->
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+
+</web-app>
