@@ -9,8 +9,8 @@
 <body>
 	<h1>로그인</h1>
 	<form action="./login_process.do" method="post">
-		id : <input type="text"> <br> 
-		pw : <input type="text"> <br>
+		id : <input type="text" name="m_id"> <br> 
+		pw : <input type="password" name="m_pw"> <br>
 		<br> <input type="submit" value="로그인">  <br>
 		<a href="./Join_member_page.do">회원가입</a>
 		
